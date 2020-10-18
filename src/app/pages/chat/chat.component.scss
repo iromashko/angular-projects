@@ -23,11 +23,11 @@
     "search-container chat-title" 71px
     "conversation-list chat-message-list" 1fr
     "new-message-container chat-form" 78px
-    / 275px 1fr;
+    / 350px 1fr;
 }
 
 #search-container,
-#conversation-container,
+#conversation-list,
 #new-message-container {
   background: #0048aa;
 }
@@ -66,6 +66,43 @@
 
 #conversation-list {
   grid-area: conversation-list;
+}
+
+.conversation {
+  color: #ddd;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #002c88;
+  padding: 20px 20px 20px 15px;
+
+  display: grid;
+  grid-template-columns: 40px 1fr max-content;
+  gap: 10px;
+
+  &.active,
+  &:hover {
+    background: #002c88;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & > img {
+    height: 40px;
+    border-radius: 100%;
+    grid-row: span 2;
+  }
+}
+
+.title-text {
+  font-weight: bold;
+  color: #eee;
+}
+
+.created-date {
+  color: #ddd;
+  white-space: nowrap;
+  font-size: 1rem;
 }
 
 #new-message-container {
