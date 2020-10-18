@@ -66,6 +66,11 @@
 
 #conversation-list {
   grid-area: conversation-list;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .conversation {
@@ -89,6 +94,7 @@
 
   & > img {
     height: 40px;
+    width: 40px;
     border-radius: 100%;
     grid-row: span 2;
   }
@@ -97,12 +103,24 @@
 .title-text {
   font-weight: bold;
   color: #eee;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .created-date {
   color: #ddd;
   white-space: nowrap;
   font-size: 1rem;
+}
+
+.conversation-message {
+  grid-column: span 2;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #new-message-container {
