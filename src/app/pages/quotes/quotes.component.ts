@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
   styleUrls: ['./quotes.component.scss'],
 })
-export class QuotesComponent {}
+export class QuotesComponent implements OnInit {
+  ngOnInit(): void {
+    //
+  }
+}
