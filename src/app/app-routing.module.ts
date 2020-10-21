@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OrganizerComponent } from './organizer/organizer.component';
 import { ChatComponent } from './pages/chat/chat.component';
+
 import { MainComponent } from './pages/main/main.component';
-import { QuotesComponent } from './pages/quotes/quotes.component';
 
 const routes: Routes = [
   {
@@ -10,12 +11,12 @@ const routes: Routes = [
     component: MainComponent,
   },
   {
-    path: 'quotes',
-    component: QuotesComponent,
-  },
-  {
     path: 'chat',
     component: ChatComponent,
+  },
+  {
+    path: 'organizer',
+    component: OrganizerComponent,
   },
 ];
 
