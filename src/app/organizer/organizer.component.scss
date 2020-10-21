@@ -4,6 +4,12 @@
   --light-color: #f4f4f4;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .organizer-wrapper {
   margin: 0;
   padding: 0;
@@ -34,12 +40,13 @@
 
   input {
     display: block;
-    width: 100%;
+    width: 98%;
     padding: 0.4rem;
     font-size: 1.2rem;
     border: 1px solid #ccc;
     outline: none;
     margin-bottom: 0.5rem;
+    margin-top: 0.6rem;
   }
 
   .container {
@@ -57,7 +64,7 @@
     display: inline-block;
     background: var(--light-color);
     color: #333;
-    padding: 4rem 1.3rem;
+    padding: 0.6rem 1.3rem;
     font-size: 1rem;
     border: none;
     cursor: pointer;
