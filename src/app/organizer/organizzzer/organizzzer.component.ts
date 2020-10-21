@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { switchMap } from 'rxjs/operators';
 import { DateService } from '../date.service';
 import { Task, TasksService } from '../tasks.service';
 
@@ -11,6 +12,7 @@ import { Task, TasksService } from '../tasks.service';
 })
 export class OrganizzzerComponent implements OnInit {
   form: FormGroup;
+  tasks: Task[] = [];
 
   constructor(
     public dateService: DateService,
@@ -18,6 +20,11 @@ export class OrganizzzerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.dateService.date
+      .pipe(switchMap((value) => this.tasksService.load(value)))
+      .subscribe((tasks) => {
+        this.tasks = tasks;
+      });
     this.form = new FormGroup({
       title: new FormControl('', Validators.required),
     });
@@ -33,12 +40,21 @@ export class OrganizzzerComponent implements OnInit {
 
     this.tasksService.create(task).subscribe(
       (task) => {
-        console.log(`New task`, task);
+        this.tasks.push(task);
         this.form.reset();
       },
       (err) => console.error(err)
     );
 
     console.log(title);
+  }
+
+  remove(task: Task) {
+    this.tasksService.remove(task).subscribe(
+      () => {
+        this.tasks = this.tasks.filter((t) => t.id !== task.id);
+      },
+      (err) => console.error(err)
+    );
   }
 }
