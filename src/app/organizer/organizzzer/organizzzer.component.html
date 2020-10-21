@@ -1,5 +1,10 @@
 <section>
-  <header>Organizer: <strong>lskdjlsdkjf</strong></header>
+  <header>
+    Organizer:
+    <strong>
+      {{ dateService.date | async | moment: "DD.MM.YYYY" }}
+    </strong>
+  </header>
 
   <hr />
   <main>
@@ -15,9 +20,15 @@
   </main>
 
   <footer>
-    <form>
-      <input type="text" />
-      <button type="submit" class="btn btn-primary btn-block">Add</button>
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <input type="text" formControlName="title" />
+      <button
+        [disabled]="form.invalid"
+        type="submit"
+        class="btn btn-primary btn-block"
+      >
+        Add
+      </button>
     </form>
   </footer>
 </section>
