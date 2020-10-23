@@ -12,6 +12,7 @@ import { SelectorComponent } from './organizer/selector/selector.component';
 import { OrganizzzerComponent } from './organizer/organizzzer/organizzzer.component';
 import { MomentPipe } from './organizer/moment.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SelectorComponent,
     OrganizzzerComponent,
     MomentPipe,
+    RxjsComponent,
   ],
   imports: [
     BrowserModule,

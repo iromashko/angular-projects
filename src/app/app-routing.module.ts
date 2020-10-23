@@ -4,6 +4,7 @@ import { OrganizerComponent } from './organizer/organizer.component';
 import { ChatComponent } from './pages/chat/chat.component';
 
 import { MainComponent } from './pages/main/main.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'organizer',
     component: OrganizerComponent,
+  },
+  {
+    path: 'rxjs-canvas',
+    component: RxjsComponent,
   },
 ];
 
