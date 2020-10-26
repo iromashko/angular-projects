@@ -1,0 +1,21 @@
+.container {
+  max-width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid lightgray;
+}
+
+.country-grid {
+  display: grid;
+  place-items: center / center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

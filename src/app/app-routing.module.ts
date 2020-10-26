@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { CovidTrackerComponent } from './pages/covid-tracker/covid-tracker.component';
 
 import { MainComponent } from './pages/main/main.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'rxjs-canvas',
     component: RxjsComponent,
+  },
+  {
+    path: 'covid-tracker',
+    component: CovidTrackerComponent,
   },
 ];
 

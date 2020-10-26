@@ -13,6 +13,7 @@ import { OrganizzzerComponent } from './organizer/organizzzer/organizzzer.compon
 import { MomentPipe } from './organizer/moment.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { CovidTrackerComponent } from './pages/covid-tracker/covid-tracker.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     OrganizzzerComponent,
     MomentPipe,
     RxjsComponent,
+    CovidTrackerComponent,
   ],
   imports: [
     BrowserModule,

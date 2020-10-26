@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card">
+    <h1>COVID 19 TRACKER</h1>
+  </div>
+  <div class="country-grid">
+    <div class="country card" *ngFor="let country of this.data">
+      <h1>{{ country.country }}</h1>
+
+      <ul>
+        <li>Active: {{ country.active }}</li>
+        <li>Cases: {{ country.cases }}</li>
+        <li>Today cases: {{ country.todayCases }}</li>
+        <li>Deaths: {{ country.deaths }}</li>
+        <li>Recovered: {{ country.recovered }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
