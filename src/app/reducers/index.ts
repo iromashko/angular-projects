@@ -6,10 +6,19 @@ import {
   MetaReducer,
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
+import {
+  countNode,
+  countReducer,
+  CountState,
+} from '../pages/ngrx/counter.reducer';
 
-export interface State {}
+export interface State {
+  [countNode]: CountState;
+}
 
-export const reducers: ActionReducerMap<State> = {};
+export const reducers: ActionReducerMap<State> = {
+  [countNode]: countReducer,
+};
 
 export const metaReducers: MetaReducer<State>[] = !environment.production
   ? []
