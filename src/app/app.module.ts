@@ -14,6 +14,14 @@ import { MomentPipe } from './organizer/moment.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { CovidTrackerComponent } from './pages/covid-tracker/covid-tracker.component';
+import { NgrxComponent } from './pages/ngrx/ngrx.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { CounterEffects } from './pages/ngrx/counter.effects';
 
 @NgModule({
   declarations: [
@@ -27,13 +35,27 @@ import { CovidTrackerComponent } from './pages/covid-tracker/covid-tracker.compo
     MomentPipe,
     RxjsComponent,
     CovidTrackerComponent,
+    NgrxComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      },
+    }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([CounterEffects]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
