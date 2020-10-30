@@ -23,6 +23,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { CounterEffects } from './pages/ngrx/counter.effects';
 import { MathGameComponent } from './pages/math-game/math-game.component';
+import { AnswerHighlightDirective } from './answer-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MathGameComponent } from './pages/math-game/math-game.component';
     CovidTrackerComponent,
     NgrxComponent,
     MathGameComponent,
+    AnswerHighlightDirective,
   ],
   imports: [
     BrowserModule,
