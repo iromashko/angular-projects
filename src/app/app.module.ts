@@ -22,6 +22,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { CounterEffects } from './pages/ngrx/counter.effects';
+import { MathGameComponent } from './pages/math-game/math-game.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CounterEffects } from './pages/ngrx/counter.effects';
     RxjsComponent,
     CovidTrackerComponent,
     NgrxComponent,
+    MathGameComponent,
   ],
   imports: [
     BrowserModule,

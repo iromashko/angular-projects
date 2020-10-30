@@ -5,6 +5,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { CovidTrackerComponent } from './pages/covid-tracker/covid-tracker.component';
 
 import { MainComponent } from './pages/main/main.component';
+import { MathGameComponent } from './pages/math-game/math-game.component';
 import { NgrxComponent } from './pages/ngrx/ngrx.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'ngrx',
     component: NgrxComponent,
+  },
+  {
+    path: 'math-game',
+    component: MathGameComponent,
   },
 ];
 
