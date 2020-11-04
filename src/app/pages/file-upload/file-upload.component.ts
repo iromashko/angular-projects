@@ -17,12 +17,14 @@ export class FileUploadComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', file);
 
-    this.http.post('http://localhost:3001/file', formData).subscribe(
-      (d) => {
-        console.log(d);
-      },
-      (error) => console.error(error)
-    );
+    this.http
+      .post('https://server-form-validation.herokuapp.com/file', formData)
+      .subscribe(
+        (d) => {
+          console.log(d);
+        },
+        (error) => console.error(error)
+      );
   }
   uploadMultiple(event: any): void {
     const files: FileList = event.target.files;
@@ -34,11 +36,13 @@ export class FileUploadComponent implements OnInit {
       formData.append('files', el);
     }
 
-    this.http.post('http://localhost:3001/multifiles', formData).subscribe(
-      (d) => {
-        console.log(d);
-      },
-      (error) => console.error(error)
-    );
+    this.http
+      .post('https://server-form-validation.herokuapp.com/multifiles', formData)
+      .subscribe(
+        (d) => {
+          console.log(d);
+        },
+        (error) => console.error(error)
+      );
   }
 }
