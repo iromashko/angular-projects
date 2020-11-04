@@ -24,6 +24,7 @@ import { reducers, metaReducers } from './reducers';
 import { CounterEffects } from './pages/ngrx/counter.effects';
 import { MathGameComponent } from './pages/math-game/math-game.component';
 import { AnswerHighlightDirective } from './answer-highlight.directive';
+import { FileUploadComponent } from './pages/file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AnswerHighlightDirective } from './answer-highlight.directive';
     NgrxComponent,
     MathGameComponent,
     AnswerHighlightDirective,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
